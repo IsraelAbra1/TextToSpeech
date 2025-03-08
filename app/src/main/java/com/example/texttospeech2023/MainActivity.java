@@ -11,7 +11,6 @@ import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
 
-
     // https://www.tutorialspoint.com/android/android_text_to_speech.htm
     // https://www.tutlane.com/tutorial/android/android-texttospeech-with-examples
     TextToSpeech textToSpeech;
@@ -26,18 +25,16 @@ public class MainActivity extends AppCompatActivity {
             public void onInit(int status) {
                 if(status == TextToSpeech.SUCCESS)
                 {
-                    int lang = textToSpeech.setLanguage(Locale.CHINESE);
+                    int lang = textToSpeech.setLanguage(Locale.ENGLISH);
                 }
             }
         });
-
 
         btn = findViewById(R.id.btn);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 textToSpeech.speak("Today is Sunday", TextToSpeech.QUEUE_FLUSH, null);
-
             }
         });
 
